@@ -1,0 +1,12 @@
+<?php
+include 'conn.php';
+
+$data = mysqli_query($conn, "SELECT * FROM messages");
+$result = [];
+
+while($row = mysqli_fetch_assoc($data)){
+  $result[] = $row;
+}
+
+echo json_encode($result);
+?>
